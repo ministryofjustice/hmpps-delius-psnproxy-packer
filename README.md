@@ -1,2 +1,2 @@
-# hmpps-delius-psnproxy-packer
-Packer project for the delius proxy
+# hmpps-delius-psn-proxy-packer
+PSN Proxy image for Delius built with Packer.
