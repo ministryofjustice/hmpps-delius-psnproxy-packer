@@ -2,7 +2,8 @@
   "variables": {
     "packer_profile": "packer",
     "target_env":  "{{env `TARGET_ENV`}}",
-    "branch_name": "{{env `BRANCH_NAME`}}"
+    "branch_name": "{{env `BRANCH_NAME`}}",
+    "image_tag_version": "{{env `IMAGE_TAG_VERSION`}}"
   },
   "builders": [
     {
@@ -26,6 +27,14 @@
         "581911240951"
       ],
       "ami_name": "HMPPS Delius PSN Proxy {{user `branch_name`}} {{timestamp}}",
+      "tags": {
+        "OS_Version": "CentOS7",
+        "Base_AMI_Name": "{{ .SourceAMIName }}",
+        "Base_AMI_ID": "{{ .SourceAMI }}",
+        "Name": "HMPPS Delius PSN Proxy {{user `branch_name`}} {{timestamp}}",
+        "Git_Branch": "{{user `branch_name`}}",
+        "image_tag_version": "{{user `image_tag_version`}}"
+      },
       "ssh_interface": "private_ip",
       "vpc_id": "vpc-02321f288159e5d0e",
       "subnet_id": "subnet-00982fba28419ac5f",
