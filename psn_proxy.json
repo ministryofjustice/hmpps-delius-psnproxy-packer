@@ -29,7 +29,7 @@
       ],
       "ami_name": "HMPPS Delius PSN Proxy {{user `branch_name`}} {{timestamp}}",
       "tags": {
-        "OS_Version": "CentOS7",
+        "OS_Version": "CentOS Linux 7",
         "Base_AMI_Name": "{{ .SourceAMIName }}",
         "Base_AMI_ID": "{{ .SourceAMI }}",
         "Name": "HMPPS Delius PSN Proxy {{user `branch_name`}} {{timestamp}}",
@@ -39,7 +39,7 @@
         "Codebuild": "{{user `codebuild`}}"
       },
       "run_volume_tags": {
-        "OS_Version": "CentOS7",
+        "OS_Version": "CentOS Linux 7",
         "Base_AMI_Name": "{{ .SourceAMIName }}",
         "Base_AMI_ID": "{{ .SourceAMI }}",
         "Name": "HMPPS Delius PSN Proxy {{user `branch_name`}} {{timestamp}}",
