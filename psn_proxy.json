@@ -6,6 +6,19 @@
     "image_tag_version": "{{env `IMAGE_TAG_VERSION`}}",
     "codebuild": "{{env `CODEBUILD`}}"
   },
+  "provisioners": [
+    {
+      "type": "ansible-local",
+      "playbook_file": "./ansible/centos_slave.yml",
+      "extra_arguments": [
+        "-b",
+        "-e artifact_bucket={{user `artifact_bucket`}}"
+      ],
+      "galaxy_file": "./ansible/centos_nginx_req.yml",
+      "inventory_groups": "centos_slave",
+      "group_vars": "./ansible/group_vars"
+    }
+  ],
   "builders": [
     {
       "type": "amazon-ebs",
@@ -25,7 +38,24 @@
       "ami_regions": ["eu-west-2"],
       "ssh_username": "centos",
       "ami_users": [
-        "581911240951"
+        "581911240951",
+        "895523100917",
+        "723123699647",
+        "728765553488",
+        "130975965028",
+        "205048117103",
+        "563502482979",
+        "010587221707",
+        "050243167760",
+        "716683748953",
+        "330914586320",
+        "130847504577",
+        "077643444046",
+        "479759138745",
+        "301496033642",
+        "349354156492",
+        "431912413968",
+        "766455809178"
       ],
       "ami_name": "HMPPS Delius PSN Proxy {{user `branch_name`}} {{timestamp}}",
       "tags": {

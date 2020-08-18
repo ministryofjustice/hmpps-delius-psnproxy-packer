@@ -1,0 +1,17 @@
+---
+
+- hosts: localhost
+  roles:
+    - packages
+  tasks:
+
+    - name: Ensure our configure_github script is executeable
+      file:
+        dest:  /home/centos/configure_github
+        mode: a+x
+      become: true
+
+    - name: Install nginx
+      yum:
+        name: nginx
+        state: present
