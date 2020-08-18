@@ -5,10 +5,8 @@
     - packages
   tasks:
 
-    - name: Ensure our configure_github script is executeable
-      file:
-        dest:  /home/centos/configure_github
-        mode: a+x
+    - name: Install Goss
+      raw: "curl -fsSL https://goss.rocks/install | sh"
       become: true
 
     - name: Install nginx
