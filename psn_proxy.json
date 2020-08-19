@@ -17,7 +17,12 @@
       "galaxy_file": "./ansible/centos_nginx_req.yml",
       "inventory_groups": "centos_nginx",
       "group_vars": "./ansible/group_vars"
+    },
+    {
+      "type": "shell",
+      "script": "scripts/install_awslogs.sh"
     }
+
   ],
   "builders": [
     {
