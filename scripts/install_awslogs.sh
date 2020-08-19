@@ -3,7 +3,7 @@
 sudo -i
 
 #create aws logs directories as installer does not
-mkdir -p  /etc/awslogs
+mkdir -p /etc/awslogs
 mkdir -p /var/awslogs/state/
 
 #download installer
