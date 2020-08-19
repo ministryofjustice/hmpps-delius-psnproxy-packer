@@ -5,6 +5,9 @@ system:
     - yum-utils
     - device-mapper-persistent-data
     - lvm2
+    - nginx
+    -
+
 
 
 install_jdk: false
