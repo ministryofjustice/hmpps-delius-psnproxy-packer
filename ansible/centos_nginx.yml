@@ -8,3 +8,8 @@
     - name: Install Goss
       raw: "curl -fsSL https://goss.rocks/install | sh"
       become: true
+
+    - name: Enable nginx
+      service:
+        name: nginx
+        enabled: yes
