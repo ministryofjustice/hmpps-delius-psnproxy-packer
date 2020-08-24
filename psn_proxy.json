@@ -24,24 +24,14 @@
       "script": "scripts/install_awslogs.sh"
     },
     {
-      "type": "shell",
-      "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
-      "script": "scripts/initialise_runtime_scripts_directories.sh"
-    },
-    {
       "type": "file",
-      "source": "assets/runtime_helper_scripts/",
-      "destination": "/opt/hmpps/proxy-scripts/"
+      "source": "assets",
+      "destination": "/tmp"
     },
     {
       "type": "shell",
       "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
-      "script": "scripts/chown_runtime_scripts_directories.sh"
-    },
-    {
-      "type": "file",
-      "source": "assets/nginx_config_files/",
-      "destination": "/etc/nginx/conf.d/"
+      "script": "scripts/install_assets.sh"
     }
 
 
