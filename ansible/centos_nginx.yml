@@ -8,4 +8,3 @@
     - name: Install Goss
       raw: "curl -fsSL https://goss.rocks/install | sh"
       become: true
-  
