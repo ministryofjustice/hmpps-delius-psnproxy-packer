@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 
-#
-# requirements
-#  env vars
-#  SPG_CERTIFICATE_BUCKET (tf-eu-west-2-hmpps-eng-dev-certificates-private-s3bucket)
-#
-
 
 set +ex
 
@@ -13,7 +7,7 @@ set +ex
 mkdir -p /usr/local/etc/certs
 
 # Copy all of the certs from s3 bucket for this environment
-aws s3 cp s3://${SPG_CERTIFICATE_BUCKET}${SPG_CERTIFICATE_PATH}  /usr/local/etc/certs --recursive
+aws s3 cp s3://tf-eu-west-2-hmpps-eng-dev-certificates-private-s3bucket  /usr/local/etc/certs --recursive
 
 # Make sure we are in the certs folder
 cd /usr/local/etc/certs/
