@@ -7,8 +7,8 @@ PATH=/opt/hmpps/proxy-scripts/production:$PATH
 PATH=/opt/hmpps/proxy-scripts/stage:$PATH
 
 
-cp -R assets/runtime_helper_scripts/* /opt/hmpps/proxy-scripts/
-cp assets/nginx_config_files/* /etc/nginx/conf.d/
+#cp -R assets/runtime_helper_scripts/* /opt/hmpps/proxy-scripts/
+#cp assets/nginx_config_files/* /etc/nginx/conf.d/
 
 
-chown -R centos /opt/hmpps
+#chown -R centos /opt/hmpps
