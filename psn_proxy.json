@@ -36,7 +36,7 @@
     {
       "type": "shell",
       "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
-      "script": "chown -R centos /opt/hmpps"
+      "script": "scripts/chown_runtime_scripts_directories.sh"
     },
     {
       "type": "file",
