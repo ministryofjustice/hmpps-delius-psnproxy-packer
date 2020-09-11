@@ -12,5 +12,5 @@ PATH=/opt/hmpps/proxy-scripts/stage:$PATH
 EOF
 
 
+mv /tmp/assets/nginx_config_files/* /etc/nginx/
 
-mv /tmp/assets/nginx_config_files/* /etc/nginx/conf.d/

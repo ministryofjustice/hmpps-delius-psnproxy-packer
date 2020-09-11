@@ -4,13 +4,30 @@
 set +ex
 
 # Create certs directory
+rm -rf /usr/local/etc/certs
 mkdir -p /usr/local/etc/certs
 
 # Copy all of the certs from s3 bucket for this environment
-aws s3 cp s3://tf-eu-west-2-hmpps-eng-dev-certificates-private-s3bucket  /usr/local/etc/certs --recursive
+aws s3 cp s3://tf-eu-west-2-hmpps-eng-dev-certificates-private-s3bucket/official-data/hmpps-delius-prod/current/  /usr/local/etc/certs/hmpps-delius-prod --recursive
+aws s3 cp s3://tf-eu-west-2-hmpps-eng-dev-certificates-private-s3bucket/official-data/hmpps-delius-pre-prod/current/  /usr/local/etc/certs/hmpps-delius-pre-prod --recursive
+aws s3 cp s3://tf-eu-west-2-hmpps-eng-dev-certificates-private-s3bucket/official-data/hmpps-delius-stage/current/  /usr/local/etc/certs/hmpps-delius-stage --recursive
+aws s3 cp s3://tf-eu-west-2-hmpps-eng-dev-certificates-private-s3bucket/unclassified-data/hmpps-delius-sandpit/current/  /usr/local/etc/certs/hmpps-delius-sandpit --recursive
+
+
+#NOTE at this point we have all the private keys, and will have the equivilent of ca.pem that is used for haproxy
+#if the config files point at the correct private key / certss and cafile from above, none of the below will be requirec
+
+
 
 # Make sure we are in the certs folder
 cd /usr/local/etc/certs/
+
+
+
+
+
+
+
 
 # Create the haproxy server pem bundle with its private key and cert
 #if [ -d "spg-iso-alt-tls" ]; then
