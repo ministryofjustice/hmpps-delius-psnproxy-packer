@@ -1,0 +1,1 @@
+alias .server.restart='service nginx restart'
