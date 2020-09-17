@@ -17,4 +17,3 @@ EOF
 
 #run installer with dummy config, to be replaced on ec2 autostart up bootstrap
 python ./awslogs-agent-setup.py --region eu-west-2 -n -c /tmp/awslogs.conf
-

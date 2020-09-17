@@ -19,11 +19,6 @@
       "group_vars": "./ansible/group_vars"
     },
     {
-      "type": "shell",
-      "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
-      "script": "scripts/install_awslogs.sh"
-    },
-    {
       "type": "file",
       "source": "assets",
       "destination": "/tmp"
@@ -31,9 +26,18 @@
     {
       "type": "shell",
       "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
-      "script": "scripts/install_assets.sh"
+      "script": "scripts/10_deploy_assets.sh"
+    },
+    {
+      "type": "shell",
+      "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
+      "script": "scripts/20_install_awslogs.sh"
+    },
+    {
+      "type": "shell",
+      "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
+      "script": "scripts/30_configure_server.sh"
     }
-
 
   ],
   "builders": [

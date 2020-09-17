@@ -6,6 +6,7 @@ system:
     - device-mapper-persistent-data
     - lvm2
     - nginx
+    - bind-utils
 
 install_jdk: false
 install_chrome: false
