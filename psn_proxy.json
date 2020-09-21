@@ -31,12 +31,13 @@
     {
       "type": "shell",
       "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
-      "script": "scripts/20_install_awslogs.sh"
+      "script": "scripts/20_configure_server.sh"
     },
+
     {
       "type": "shell",
       "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
-      "script": "scripts/30_configure_server.sh"
+      "script": "scripts/30_install_awslogs.sh"
     }
 
   ],
