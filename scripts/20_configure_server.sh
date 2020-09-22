@@ -16,7 +16,7 @@ PATH=/opt/hmpps/proxy-scripts/stage:$PATH
 
 #source aliases
 for f in /opt/hmpps/aliases/*.sh; do
-   source "$f" -H
+   source "$$f" -H
 done
 
 
