@@ -1,6 +1,3 @@
-#add timestamp to history file
-export HISTTIMEFORMAT="%d/%m/%y %T "
-
 
 #set timezone to BST
 export TZ=Europe/London
@@ -13,6 +10,9 @@ PATH=/opt/hmpps/proxy-scripts/:$PATH
 PATH=/opt/hmpps/proxy-scripts/pre-prod:$PATH
 PATH=/opt/hmpps/proxy-scripts/production:$PATH
 PATH=/opt/hmpps/proxy-scripts/stage:$PATH
+
+export HISTTIMEFORMAT="%d/%m/%y %T "
+
 
 #source aliases
 for f in /opt/hmpps/aliases/*.sh; do

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-alias .helpers.aliases.list="aliases"
+alias .helpers.aliases.list="alias"
 alias .helpers.functions.list="declare -F"
 alias .network.netstat_active_connections='netstat -pnltu'
 alias .processes.all="ps -auxf"
