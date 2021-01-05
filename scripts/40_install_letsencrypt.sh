@@ -12,6 +12,13 @@ sudo yum update -y
 echo '*** installing certbot-nginx..'
 sudo yum install -y certbot-nginx
 
+sudo yum install -y tree
+
+cd /etc/letsencrypt
+tree
+
+# mkdir -p foo/bar/zoo/andsoforth
+
 # copy config file for psn cert.
-cp /tmp/assets/letsencrypt/renewal/psn.probation.service.justice.gov.uk.conf /etc/letsencrypt/renewal/psn.probation.service.justice.gov.uk.conf
+# cp /tmp/assets/letsencrypt/renewal/psn.probation.service.justice.gov.uk.conf /etc/letsencrypt/renewal/psn.probation.service.justice.gov.uk.conf
 
