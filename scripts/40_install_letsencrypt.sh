@@ -10,13 +10,12 @@ sudo -i
 # install letsencrypt certbot-nginx
 sudo yum install -y epel-release
 sudo yum install -y certbot-nginx
-
 sudo yum install -y tree
 
 sudo pip uninstall -y pyopenssl
 sudo pip uninstall -y cryptography
-sudo pip install -y pyopenssl
-sudo pip install -y cryptography
+sudo pip install pyopenssl
+sudo pip install cryptography
 
 certbot --help
 
