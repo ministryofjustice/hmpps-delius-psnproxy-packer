@@ -36,7 +36,7 @@
     {
       "type": "shell",
       "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
-      "script": "scripts/30_install_awslogs.sh"
+      "script": "scripts/30_install_awslogs_amazonlinux2.sh"
     },
     {
       "type": "shell",
