@@ -2,6 +2,9 @@
 
 sudo -i
 
+# remove pip installed urllib3 as it conflicts with certbot
+sudo pip uninstall urllib3 -y
+
 
 yum reinstall -y ca-certificates python-urllib3 python-requests pyOpenSSL
 
