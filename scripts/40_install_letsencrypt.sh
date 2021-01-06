@@ -13,10 +13,10 @@ sudo yum install -y certbot-nginx
 
 sudo yum install -y tree
 
-sudo pip uninstall pyopenssl
-sudo pip uninstall cryptography
-sudo pip install pyopenssl
-sudo pip install cryptography
+sudo pip uninstall -y pyopenssl
+sudo pip uninstall -y cryptography
+sudo pip install -y pyopenssl
+sudo pip install -y cryptography
 
 certbot --help
 
