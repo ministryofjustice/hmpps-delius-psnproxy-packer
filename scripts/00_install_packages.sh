@@ -7,7 +7,7 @@ yum install -y vim
 yum install -y unzip
 yum install -y tree
 yum install -y jq
-yum remove -y *-devel
+#yum remove -y *-devel
 yum remove -y *-header
 
 yum groups mark convert
