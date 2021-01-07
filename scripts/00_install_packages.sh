@@ -5,7 +5,7 @@ sudo -i
 yum install -y deltarpm
 yum install -y vim
 yum install -y unzip
-install -y tree
+yum install -y tree
 yum install -y jq
 yum remove -y *-devel
 yum remove -y *-header
