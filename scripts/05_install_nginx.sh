@@ -16,7 +16,7 @@ else
     echo "/etc/pki/tls/certs directory created"
 fi
 
-cp /tmp/ssl/ca-bundle.crt /etc/pki/tls/certs/ca-bundle.crt
+cp /tmp/assets/ssl/ca-bundle.crt /etc/pki/tls/certs/ca-bundle.crt
 
 # copy nginx configs for IM, IAPS, SPG
 #mkdir -p /etc/nginx/

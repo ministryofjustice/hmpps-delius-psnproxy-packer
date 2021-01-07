@@ -13,11 +13,6 @@
       "destination": "/tmp"
     },
     {
-      "type": "file",
-      "source": "ssl",
-      "destination": "/tmp"
-    },
-    {
       "type": "shell",
       "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
       "script": "scripts/00_install_packages.sh"
