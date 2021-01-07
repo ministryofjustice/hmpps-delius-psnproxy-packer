@@ -8,17 +8,6 @@
   },
   "provisioners": [
     {
-      "type": "ansible-local",
-      "playbook_file": "./ansible/centos_nginx.yml",
-      "extra_arguments": [
-        "-b",
-        "-e artifact_bucket={{user `artifact_bucket`}}"
-      ],
-      "galaxy_file": "./ansible/centos_nginx_req.yml",
-      "inventory_groups": "centos_nginx",
-      "group_vars": "./ansible/group_vars"
-    },
-    {
       "type": "file",
       "source": "assets",
       "destination": "/tmp"
