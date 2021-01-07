@@ -12,18 +12,21 @@ sudo yum install -y epel-release
 sudo yum install -y certbot-nginx
 sudo yum install -y tree
 
-# sudo pip uninstall -y pyopenssl
-# sudo pip uninstall -y cryptography
-# sudo pip install pyopenssl
-# sudo pip install cryptography
-
+# show certbot help to show it's installed ok (we sometimes get python errors)
 certbot --help
 
-cd /etc/
-ll letsencrypt
+mkdir -p /etc/letsencrypt/accounts
+mkdir -p /etc/letsencrypt/archive/psn.probation.service.justice.gov.uk
+mkdir -p /etc/letsencrypt/csr
+mkdir -p /etc/letsencrypt/keys
+mkdir -p /etc/letsencrypt/live/psn.probation.service.justice.gov.uk
+mkdir -p /etc/letsencrypt/renewal
+mkdir -p /etc/letsencrypt/renewal-hooks/deploy
+mkdir -p /etc/letsencrypt/renewal-hooks/post
+mkdir -p /etc/letsencrypt/renewal-hooks/pre
 
-tree /etc/letsencrypt
 
 # copy config file for psn cert.
-# cp /tmp/assets/letsencrypt/renewal/psn.probation.service.justice.gov.uk.conf /etc/letsencrypt/renewal/psn.probation.service.justice.gov.uk.conf
+cp /tmp/assets/letsencrypt/renewal/psn.probation.service.justice.gov.uk.conf /etc/letsencrypt/renewal/psn.probation.service.justice.gov.uk.conf
 
+tree /etc/letsencrypt
