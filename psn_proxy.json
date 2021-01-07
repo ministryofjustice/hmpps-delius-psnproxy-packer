@@ -11,26 +11,6 @@
       "type": "file",
       "source": "assets",
       "destination": "/tmp"
-    },
-    {
-      "type": "shell",
-      "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
-      "script": "scripts/00_install_packages.sh"
-    },
-    {
-      "type": "shell",
-      "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
-      "script": "scripts/10_deploy_assets.sh"
-    },
-    {
-      "type": "shell",
-      "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
-      "script": "scripts/20_configure_server.sh"
-    },
-    {
-      "type": "shell",
-      "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
-      "script": "scripts/30_install_awslogs_amazonlinux2.sh"
     }
   ],
   "builders": [
@@ -95,16 +75,7 @@
       "ssh_interface": "private_ip",
       "vpc_id": "vpc-02321f288159e5d0e",
       "subnet_id": "subnet-00982fba28419ac5f",
-      "temporary_security_group_source_cidr": "10.0.0.0/8",
-      "launch_block_device_mappings": [
-        {
-          "device_name": "/dev/xvdb",
-          "volume_type": "gp2",
-          "volume_size": 256,
-          "delete_on_termination": true,
-          "encrypted": false
-        }
-      ]
+      "temporary_security_group_source_cidr": "10.0.0.0/8"
     }
   ]
 }
