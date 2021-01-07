@@ -53,3 +53,5 @@ cp /tmp/assets/nginx_config_files/prod-conf.d/im-proxy.conf /etc/nginx/conf.d/im
 
 # server-names
 cp /tmp/assets/nginx_config_files/prod-conf.d/server-names.conf /etc/nginx/conf.d/server-names.conf
+
+tree /etc/nginx
