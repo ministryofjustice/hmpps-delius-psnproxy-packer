@@ -25,8 +25,16 @@ mkdir -p /etc/letsencrypt/renewal-hooks/deploy
 mkdir -p /etc/letsencrypt/renewal-hooks/post
 mkdir -p /etc/letsencrypt/renewal-hooks/pre
 
-
 # copy config file for psn cert.
 cp /tmp/assets/letsencrypt/renewal/psn.probation.service.justice.gov.uk.conf /etc/letsencrypt/renewal/psn.probation.service.justice.gov.uk.conf
 
 tree /etc/letsencrypt
+
+# create a cron job to auto-renew check the SSL cert every 12 hours
+cat << 'EOF' >> /etc/cron.d/letsencrypt-renew
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+0 */12 * * * root certbot renew --dns-route53 --non-interactive --post-hook "service nginx reload"
+EOF
+
+sudo systemctl restart crond.service
