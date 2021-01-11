@@ -2,16 +2,16 @@
 
 sudo -i
 
-#========================================
-# install letsencrypt certbot-nginx
-#========================================
+echo '========================================'
+echo 'install letsencrypt certbot-nginx'
+echo '========================================'
 sudo yum install -y epel-release
 sudo yum install -y certbot-nginx
 sudo yum install -y tree
 
-#========================================
-# show certbot help to show it's installed ok (we sometimes get python errors)
-#========================================
+echo '========================================'
+echo 'show certbot help to show its installed ok (we sometimes get python errors)'
+echo '========================================'
 certbot --help
 
 # mkdir -p /etc/letsencrypt/accounts
@@ -24,45 +24,40 @@ certbot --help
 # mkdir -p /etc/letsencrypt/renewal-hooks/post
 # mkdir -p /etc/letsencrypt/renewal-hooks/pre
 
-#========================================
-# copy config file for psn cert.
-#========================================
+echo '========================================'
+echo 'copy config file for psn cert.'
+echo '========================================'
 #cp /tmp/assets/letsencrypt/renewal/psn.probation.service.justice.gov.uk.conf /etc/letsencrypt/renewal/psn.probation.service.justice.gov.uk.conf
 
-#========================================
-# copy certbot cert renewal script
-#========================================
+echo '========================================'
+echo 'copy certbot cert renewal script'
+echo '========================================'
+
 mkdir -p /opt/hmpps/scripts
 cp /tmp/scripts/letsencrypt-renew.sh /opt/hmpps/scripts/letsencrypt-renew.sh
 chmod +x /opt/hmpps/scripts/letsencrypt-renew.sh
 chown -R root:root /opt/hmpps/scripts
 
-#========================================
-# install the certbot route53 plugin
-#========================================
+echo '========================================'
+echo 'install the certbot route53 plugin'
+echo '========================================'
 pip3 install certbot-dns-route53
 certbot plugins
 
-#========================================
-# create a cron job to auto-renew check the SSL cert every 12 hours
-#========================================
-
-# cat << 'EOF' >> /etc/cron.d/letsencrypt-renew
-# SHELL=/bin/sh
-# PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-# 0 */12 * * * root certbot certonly --dns-route53 --non-interactive --post-hook "service nginx reload" --agree-tos --email awssupportteam@digital.justice.gov.uk --domains *.psn.probation.service.justice.gov.uk
-# 5 */12 * * * root certbot certonly --dns-route53 --non-interactive --post-hook "service nginx reload" --agree-tos --email awssupportteam@digital.justice.gov.uk --domains *.stage.probation.service.justice.gov.uk
-# EOF
-
+echo '========================================'
+echo 'create a cron job to auto-renew check the SSL cert every 12 hours'
+echo '========================================'
 cat << 'EOF' >> /etc/cron.d/letsencrypt-renew
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 0 */12 * * * root /opt/scripts/letsencrypt-renew.sh
 EOF
 
-#========================================
-# restart service
-#========================================
+cat /etc/cron.d/letsencrypt-renew
+
+echo '========================================'
+echo 'restart crond.service'
+echo '========================================'
 sudo systemctl restart crond.service
 
 
