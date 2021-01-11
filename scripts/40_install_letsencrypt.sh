@@ -63,3 +63,7 @@ echo '========================================'
 sudo systemctl restart crond.service
 
 
+echo '========================================'
+echo 'Initialise the LetsEncrypt SSL Certificates'
+echo '========================================'
+sudo /opt/hmpps/scripts/letsencrypt-renew.sh
