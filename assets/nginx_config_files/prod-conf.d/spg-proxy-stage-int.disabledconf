@@ -6,13 +6,10 @@
 # PO STUB proxies to spgw-ext.stage.probation.service.justice.gov.uk using spgw-int-psn client cert
 # SPG proxies to POS using spgw-ext-psn client cert
 
-
-
 server {
   listen                          9001 ssl;
   listen                          [::]:9001 ssl;
   server_name                     spgw-int-psn.stage.probation.service.justice.gov.uk;
-  ssl                             on;
   ssl_certificate                 /etc/pki/tls/certs/spgw-int-psn.stage.probation.service.justice.gov.uk.public-certificate.pem;
   ssl_certificate_key             /etc/pki/tls/private/spgw-int-psn.stage.probation.service.justice.gov.uk.key;
   ssl_client_certificate	        /etc/pki/tls/certs/privateca.probation.service.justice.gov.uk.public-certificate.pem;
@@ -21,7 +18,6 @@ server {
   resolver			                  51.231.83.98 valid=30s;
   client_max_body_size			      100G;
 
-
   location ~ ^/POSTUB/(.*) {
     proxy_pass                      https://spgw-crc-ext.stage.probation.service.justice.gov.uk:9001/$1?$args;
     include                         proxy_params;
@@ -29,7 +25,6 @@ server {
     proxy_ssl_certificate_key       /etc/pki/tls/private/spgw-ext-psn.stage.probation.service.justice.gov.uk.key;
     proxy_ssl_trusted_certificate   /etc/pki/tls/certs/privateca.probation.service.justice.gov.uk.public-certificate.pem;
   }
-
 
   location ~ ^/PF/(.*) {
     proxy_pass                      https://shard-api.stage.interservefls.gse.gov.uk:9001/$1?$args;
@@ -54,7 +49,6 @@ server {
     proxy_ssl_certificate_key       /etc/pki/tls/private/spgw-ext-psn.stage.probation.service.justice.gov.uk.key;
     proxy_ssl_trusted_certificate   /etc/pki/tls/certs/privateca.probation.service.justice.gov.uk.public-certificate.pem;
   }
-
 
   #forward from POs to SPGW
   location / {
