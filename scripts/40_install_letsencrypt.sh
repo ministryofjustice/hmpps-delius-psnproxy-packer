@@ -36,7 +36,7 @@ echo '========================================'
 echo 'copy certbot cert renewal script'
 echo '========================================'
 mkdir -p /opt/hmpps/scripts
-cp /tmp/scripts/letsencrypt-renew.sh /opt/hmpps/scripts/letsencrypt-renew.sh
+cp /tmp/letsencrypt-renew.sh /opt/hmpps/scripts/letsencrypt-renew.sh
 chmod +x /opt/hmpps/scripts/letsencrypt-renew.sh
 chown -R root:root /opt/hmpps/scripts
 
@@ -61,9 +61,3 @@ echo '========================================'
 echo 'restart crond.service'
 echo '========================================'
 sudo systemctl restart crond.service
-
-
-echo '========================================'
-echo 'Initialise the LetsEncrypt SSL Certificates'
-echo '========================================'
-sudo /opt/hmpps/scripts/letsencrypt-renew.sh
