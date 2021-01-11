@@ -32,7 +32,6 @@ echo '========================================'
 echo '========================================'
 echo 'copy certbot cert renewal script'
 echo '========================================'
-
 mkdir -p /opt/hmpps/scripts
 cp /tmp/scripts/letsencrypt-renew.sh /opt/hmpps/scripts/letsencrypt-renew.sh
 chmod +x /opt/hmpps/scripts/letsencrypt-renew.sh
@@ -50,7 +49,7 @@ echo '========================================'
 cat << 'EOF' >> /etc/cron.d/letsencrypt-renew
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-0 */12 * * * root /opt/scripts/letsencrypt-renew.sh
+0 */12 * * * root /opt/hmpps/scripts/letsencrypt-renew.sh
 EOF
 
 cat /etc/cron.d/letsencrypt-renew
