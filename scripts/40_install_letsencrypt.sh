@@ -14,20 +14,23 @@ echo 'show certbot help to show its installed ok (we sometimes get python errors
 echo '========================================'
 certbot --help
 
-# mkdir -p /etc/letsencrypt/accounts
-# mkdir -p /etc/letsencrypt/archive/psn.probation.service.justice.gov.uk
-# mkdir -p /etc/letsencrypt/csr
-# mkdir -p /etc/letsencrypt/keys
-# mkdir -p /etc/letsencrypt/live/psn.probation.service.justice.gov.uk
-# mkdir -p /etc/letsencrypt/renewal
-# mkdir -p /etc/letsencrypt/renewal-hooks/deploy
-# mkdir -p /etc/letsencrypt/renewal-hooks/post
-# mkdir -p /etc/letsencrypt/renewal-hooks/pre
+echo '========================================'
+echo 'creating /etc/letsencrypt folder structure'
+echo '========================================'
+mkdir -p /etc/letsencrypt/accounts
+mkdir -p /etc/letsencrypt/archive/psn.probation.service.justice.gov.uk
+mkdir -p /etc/letsencrypt/csr
+mkdir -p /etc/letsencrypt/keys
+mkdir -p /etc/letsencrypt/live/psn.probation.service.justice.gov.uk
+dir -p /etc/letsencrypt/renewal
+mkdir -p /etc/letsencrypt/renewal-hooks/deploy
+mkdir -p /etc/letsencrypt/renewal-hooks/post
+mkdir -p /etc/letsencrypt/renewal-hooks/pre
 
 echo '========================================'
 echo 'copy config file for psn cert.'
 echo '========================================'
-#cp /tmp/assets/letsencrypt/renewal/psn.probation.service.justice.gov.uk.conf /etc/letsencrypt/renewal/psn.probation.service.justice.gov.uk.conf
+cp /tmp/assets/letsencrypt/renewal/psn.probation.service.justice.gov.uk.conf /etc/letsencrypt/renewal/psn.probation.service.justice.gov.uk.conf
 
 echo '========================================'
 echo 'copy certbot cert renewal script'
