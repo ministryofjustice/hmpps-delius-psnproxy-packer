@@ -14,7 +14,7 @@
     },
     {
       "type": "file",
-      "source": "scripts/letsencrypt-renew.sh",
+      "source": "assets/scripts/letsencrypt-renew.sh",
       "destination": "/tmp/letsencrypt-renew.sh"
     },
     {

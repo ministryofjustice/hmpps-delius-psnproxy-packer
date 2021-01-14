@@ -1,0 +1,1 @@
+echo | openssl s_client -showcerts -servername data-nle.stage.probation.service.justice.gov.uk -connect data-nle.stage.probation.service.justice.gov.uk:8443 2>/dev/null | openssl x509 -inform pfxm -noout -text
