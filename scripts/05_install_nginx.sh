@@ -30,8 +30,8 @@ cp /tmp/assets/nginx_config_files/proxy_params /etc/nginx/proxy_params
 cp /tmp/assets/nginx_config_files/ssl_params /etc/nginx/ssl_params
 
 # spg-proxy-sandpit
-cp /tmp/assets/nginx_config_files/dev-conf.d/spg-proxy-sandpit-ext.conf /etc/nginx/conf.d/spg-proxy-sandpit-ext.conf
-cp /tmp/assets/nginx_config_files/dev-conf.d/spg-proxy-sandpit-int.conf /etc/nginx/conf.d/spg-proxy-sandpit-int.conf
+# cp /tmp/assets/nginx_config_files/dev-conf.d/spg-proxy-sandpit-ext.conf /etc/nginx/conf.d/spg-proxy-sandpit-ext.conf
+# cp /tmp/assets/nginx_config_files/dev-conf.d/spg-proxy-sandpit-int.conf /etc/nginx/conf.d/spg-proxy-sandpit-int.conf
 
 #spg-proxy-preprod
 cp /tmp/assets/nginx_config_files/prod-conf.d/spg-proxy-preprod-ext.conf /etc/nginx/conf.d/spg-proxy-preprod-ext.conf
