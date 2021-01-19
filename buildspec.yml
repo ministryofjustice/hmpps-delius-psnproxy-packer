@@ -4,6 +4,7 @@ env:
   variables:
     AWS_REGION:      "eu-west-2"
     TARGET_ENV:      "dev"
+    SPG_CERTIFICATE_BUCKET: "tf-eu-west-2-hmpps-eng-dev-certificates-private-s3bucket"
   parameter-store:
     GITHUB_ACCESS_TOKEN: "/jenkins/github/accesstoken"
     ARTIFACT_BUCKET:     "/codebuild/artifact_bucket"
@@ -12,4 +13,3 @@ phases:
   build:
     commands:
       - ${CODEBUILD_SRC_DIR}/run-project.sh 'psn_proxy.json'
-        

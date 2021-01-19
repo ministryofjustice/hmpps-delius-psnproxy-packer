@@ -1,0 +1,21 @@
+
+/var/log/nginx log files
+
+-rw-r--r-- 1 nginx nginx       0 Sep  2 09:00 access.log
+-rw-r--r-- 1 nginx nginx       0 Sep  5 07:54 im-proxy.stage.psn.probation.service.justice.gov.uk.log
+-rw-r--r-- 1 nginx nginx       0 Sep  5 07:54 im-proxy.psdata-n.probation.service.justice.gov.uk.log
+-rw-r--r-- 1 nginx nginx       0 Sep  5 07:54 data-im-proxy-ext-psn.stage.probation.service.justice.gov.uk.log
+-rw-r--r-- 1 nginx nginx       0 Nov 12 07:38 password-reset.psn.probation.service.justice.gov.uk.log
+-rw-r--r-- 1 nginx nginx       0 Jan  6 09:13 training-im-proxy.psn.probation.service.justice.gov.uk.log
+-rw-r--r-- 1 nginx nginx       0 Jan  6 09:13 selfserv-im-proxy.psn.probation.service.justice.gov.uk.log
+-rw-r--r-- 1 nginx nginx       0 Jan  6 09:13 mis-im-proxy.psn.probation.service.justice.gov.uk.log
+-rw-r--r-- 1 nginx nginx       0 Jan  6 09:13 im-proxy-latest.psn.probation.service.justice.gov.uk.log
+-rw-r--r-- 1 nginx nginx       0 Jan  8 05:37 error.log
+-rw-r--r-- 1 nginx nginx       0 Jan 14 05:19 im-proxy.psn.probation.service.justice.gov.uk.log
+-rw-r--r-- 1 nginx nginx       0 Jan 15 08:23 spgw-ext-psn.pre-prod.probation.service.justice.gov.uk.log
+-rw-r--r-- 1 nginx nginx     346 Jan 15 14:20 ndelius.psn.probation.service.justice.gov.uk.log
+-rw-r--r-- 1 nginx nginx  218925 Jan 15 15:34 spgw-int-psn.pre-prod.probation.service.justice.gov.uk.log
+-rw-r--r-- 1 nginx nginx  521740 Jan 15 15:34 data-im-proxy.psn.probation.service.justice.gov.uk.log
+-rw-r--r-- 1 nginx nginx  483375 Jan 15 15:34 data-im-proxy-int-psn.stage.probation.service.justice.gov.uk.log
+-rw-r--r-- 1 nginx nginx 5328497 Jan 15 15:34 spgw-int-psn.probation.service.justice.gov.uk.log
+-rw-r--r-- 1 nginx nginx 6725233 Jan 15 15:34 spgw-ext-psn.probation.service.justice.gov.uk.log

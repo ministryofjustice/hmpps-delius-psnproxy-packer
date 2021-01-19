@@ -1,0 +1,1 @@
+alias .vi.spg-proxy-sandpit-ext='vi /etc/nginx/conf.d/spg-proxy-sandpit-ext.conf'

@@ -1,0 +1,1 @@
+echo | openssl s_client -showcerts -servername data-im.probation.service.justice.gov.uk -connect data-im.probation.service.justice.gov.uk:443 2>/dev/null | openssl x509 -inform pfxm -noout -text
