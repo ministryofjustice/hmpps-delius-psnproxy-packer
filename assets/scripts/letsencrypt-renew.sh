@@ -2,7 +2,7 @@
 #!/usr/bin/env bash
 
 # This script renews LetsEncrypt Certificates for:
-#   *.psn.probation.service.justice.gov.uk with Route53 DNS managed in PSN AWS Account (581911240951)
+#   *.psn.probation.service.justice.gov.uk with Route53 DNS managed in PSN AWS Account ({PSNAccount})
 #   *.stage.probation.service.justice.gov.uk with Route53 DNS managed in delius-stage AWS Account (205048117103)
 # 
 # Certificate Validation is via the certbot-route53 plugin which creates a TXT record to validate domain ownership with the LetsEncrypt certbot
