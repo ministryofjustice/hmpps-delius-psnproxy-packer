@@ -72,7 +72,7 @@
       "ami_regions": ["eu-west-2"],
       "ssh_username": "ec2-user",
       "ami_users": [
-        "{PSNAccount}",
+        "581911240951",
         "895523100917",
         "723123699647",
         "728765553488",
