@@ -63,16 +63,16 @@ cd /usr/local/etc/certs/
 #fi
 #
 ## If there are POs in this environment, there may be intermediate and root ca certs
-#if [ -d "parent-orgs/CA_ROOT" ]; then
+#if [ -d "parent-orgs/PSN_CA_ROOT" ]; then
 #  echo "Importing PO ROOT CA certs"
-#  cat parent-orgs/CA_ROOT/*.crt >> ca.pem
+#  cat parent-orgs/PSN_CA_ROOT/*.crt >> ca.pem
 #fi
 #
 ## In CA-INTER of delius-prod there is a RAPID-SSL .cer file (Is it needed?)
-#if [ -d "parent-orgs/CA_INTER" ]; then
+#if [ -d "parent-orgs/PSN_CA_INTER" ]; then
 #  echo "Importing PO Intermediate CA certs"
-#  cat parent-orgs/CA_INTER/*.crt >> ca.pem
-#  cat parent-orgs/CA_INTER/*.cer >> ca.pem
+#  cat parent-orgs/PSN_CA_INTER/*.crt >> ca.pem
+#  cat parent-orgs/PSN_CA_INTER/*.cer >> ca.pem
 #fi
 #
 ## If MTC folder exits then cat MTC cert(s) --> spg-psnppl.omnia.mtcnovo.net.pem into ca.pem
