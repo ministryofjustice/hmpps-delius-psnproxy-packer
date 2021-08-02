@@ -25,11 +25,6 @@
     {
       "type": "shell",
       "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
-      "script": "scripts/03_copy_spg_certs.sh"
-    },
-    {
-      "type": "shell",
-      "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
       "script": "scripts/05_install_nginx.sh"
     },
     {

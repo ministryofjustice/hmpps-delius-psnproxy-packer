@@ -6,10 +6,7 @@ ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 #update bash profile with paths and aliases
 cat << 'EOF' >> /root/.bashrc
-PATH=/opt/hmpps/proxy-scripts/:$PATH
-PATH=/opt/hmpps/proxy-scripts/pre-prod:$PATH
-PATH=/opt/hmpps/proxy-scripts/production:$PATH
-PATH=/opt/hmpps/proxy-scripts/stage:$PATH
+PATH=/opt/hmpps/proxy_scripts/:$PATH
 
 export HISTTIMEFORMAT="%d/%m/%y %T "
 
